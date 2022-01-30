@@ -185,8 +185,8 @@ proc get_times*(date:DateTime, lng, lat: auto, height:int = 0,
 # workaround: daylight savings already changed.
 let baseOffset*: Duration = initDuration(seconds = -1 * initDateTime(1,mJan,2000,1,0,0,0).utcOffset())
 
+
 proc example() =
-  ## 
   let date = now()
   let lng = 34.801
   let lat = 31.867
@@ -198,3 +198,5 @@ proc example() =
     var truerise = rise.addOffset(baseOffset)
     echo truerise
 
+when isMainModule:
+  example()
